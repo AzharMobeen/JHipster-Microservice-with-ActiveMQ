@@ -1,0 +1,1 @@
+# JHipster-Microservice-with-ActiveMQ
