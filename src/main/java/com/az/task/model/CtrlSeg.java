@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -125,5 +126,25 @@ public class CtrlSeg {
             ", requestId='" + requestId + '\'' +
             ", routeId='" + routeId + '\'' +
             '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CtrlSeg ctrlSeg = (CtrlSeg) o;
+        return Objects.equals(trnName, ctrlSeg.trnName) &&
+            Objects.equals(trnver, ctrlSeg.trnver) &&
+            Objects.equals(uuid, ctrlSeg.uuid) &&
+            Objects.equals(warehouseId, ctrlSeg.warehouseId) &&
+            Objects.equals(clientId, ctrlSeg.clientId) &&
+            Objects.equals(ctryName, ctrlSeg.ctryName) &&
+            Objects.equals(requestId, ctrlSeg.requestId) &&
+            Objects.equals(routeId, ctrlSeg.routeId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(trnName, trnver, uuid, warehouseId, clientId, ctryName, requestId, routeId);
     }
 }
