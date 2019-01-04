@@ -161,4 +161,4 @@ outbound:
     endpoint: destination
 
 jaxb:
-    package: com.az.task.model
+    package: com.az.task.domain
